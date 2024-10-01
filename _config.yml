@@ -23,7 +23,7 @@ email: jaykaybaek@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   프로그래밍, 백엔드와 관련한 주제를 가지고 포스팅합니다.
 baseurl: "/myBlog/"
-url: "https://jaycobcoder.github.io"b
+url: "https://jaycobcoder.github.io"
 github_username:  jaycobcoder
 
 markdown: kramdown
