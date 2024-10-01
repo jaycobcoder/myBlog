@@ -1,2 +1,1 @@
-# jaycobcoder.github.io
 # myBlog
