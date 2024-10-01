@@ -1,0 +1,49 @@
+<!-- <div class="posts">
+  {% for post in paginator.posts %}
+    <div class="post">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt }}</p>
+    </div>
+  {% endfor %}
+
+  <div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="prev">Previous</a>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    <a href="{{ paginator.page_path | replace: ':num', page }}" class="{% if paginator.page == page %}active{% endif %}">
+      {{ page }}
+    </a>
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% endif %}
+  </div>
+</div> -->
+<ul class="list-none">
+  {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+  {% for post in paginator.posts %}
+    <li>
+      <a href="{{ post.url }}">
+        <h1>
+          {{ post.title }}
+        </h1>
+      </a>
+      <p>
+        {{ post.excerpt | strip_html | truncatewords: 30 }}
+      </p>
+      <p>{{ post.date | date: '%A, %Y-%m-%d' }}</p>
+  {% endfor %}
+</ul>
+
+<div class="pagination">
+  <span>{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">Previous</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">Next</a>
+  {% endif %}
+</div>

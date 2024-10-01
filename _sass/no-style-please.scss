@@ -1,0 +1,210 @@
+// -------------- THEME SWITCHER -------------- //
+@mixin dark-appearance {
+  filter: invert(1);
+  img {
+    filter: invert(1);
+
+    &.ioda { filter: invert(0); }
+  }
+}
+
+body[a="dark"] { @include dark-appearance; }
+
+
+@media (prefers-color-scheme: dark) {
+  body[a="auto"] { @include dark-appearance; }
+}
+// -------------------------------------------- //
+
+// bg color is also needed in html in order to
+// block body's background propagation
+// see: https://stackoverflow.com/a/61265706
+html, body { background: white; }
+
+html { height: 100%; }
+
+body {
+  color: black;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+
+.post-meta { text-align: right; }
+
+h2, h3, h4, h5, h6 { margin-top: 3rem; }
+
+hr { margin: 2rem 0; }
+
+p { margin: 1rem 0; }
+
+li { margin: 0.4rem 0; }
+
+*:target { background: yellow; }
+
+.w {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+hr {
+  text-align: center;
+  border: 0;
+
+  &:before { content: '/////' }
+  &:after { content: attr(data-content) '/////' }
+}
+
+table { width: 100%; }
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+
+code {
+  font-size: 85%;
+}
+
+p code, li code {
+  padding: 0.2em 0.4em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+
+
+div.highlighter-rouge code {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem;
+  tab-size: 4;
+}
+
+
+blockquote {
+  font-style: italic;
+  border-left: 2px solid #000;
+  padding-left: 1em;
+  font-style: italic;
+  margin-left: 2em;
+}
+
+.header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.pr {
+  padding-right: 1rem;
+}
+
+.pl {
+  padding-left: 1rem;
+}
+
+.pt {
+  padding-top: 1rem;
+}
+
+.pb {
+  padding-bottom: 1rem;
+}
+
+.bt {
+  min-width: 70px;
+}
+
+.bt:hover {
+  font-weight: 700;
+}
+
+.bt-none {
+  border: 0;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+input#search-input {
+  width: 100%;
+  height: 3rem;
+}
+
+footer {
+  background: #000;
+  color: #fff;
+}
+
+.list-none{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+pre table, pre table th, pre table td {
+  border: none;
+  border-collapse: collapse;
+  padding: 0;
+}
+
+.rouge-gutter {
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  cursor: default; /* Change cursor to default */
+}
+
+@media (max-width: 450px) {
+  .header {
+    max-width: none;
+    margin: 0;
+  }
+
+  .navigation{
+    display: none;
+  }
+
+  .identity {
+    margin: 0 auto;
+  }
+
+  .pr {
+    padding-right: 0.5rem;
+  }
+  
+  .pl {
+    padding-left: 0.5rem;
+  }
+  
+  .pt {
+    padding-top: 0.5rem;
+  }
+  
+  .pb {
+    padding-bottom: 0.5rem;
+  }
+}
