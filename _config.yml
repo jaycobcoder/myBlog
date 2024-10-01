@@ -22,8 +22,8 @@ title: ElseThrow 기술블로그
 email: jaykaybaek@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   프로그래밍, 백엔드와 관련한 주제를 가지고 포스팅합니다.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "jaycobcoder.github.io"
+baseurl: "myBlog"
+url: "https://jaycobcoder.github.io"
 # twitter_username: jekyllrb
 github_username:  jaycobcoder
 
